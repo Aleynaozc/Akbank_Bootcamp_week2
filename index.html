@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./assets/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/fontawesome/css/all.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="page-up">
+                    <!-- ADD USER LIST -->
+                    <div class="add-form-container col-3 ">
+                        <h2>Add Person</h2>
+                        <form class="form-container" id="addPersonForm">
+                            <div class="form-area">
+                                <div class="mb-3 ">
+                                    <label for="Name" class="form-label">First Name</label>
+                                    <input class="form-control" id="firstName" placeholder="First Name">
+                                </div>
+                                <div class="mb-3 ">
+                                    <label for="Surname" class="form-label">Surname</label>
+                                    <input class="form-control" id="surName" placeholder="Surname">
+                                </div>
+                                <div class="mb-3 ">
+                                    <label for="Balance" class="form-label">Balance</label>
+                                    <input class="form-control" id="balance" placeholder="Balance" type="text">
+                                </div>
+                                <button type="button" class="btn btn-primary" id="useraddBtn" onclick=" addUser()">Add
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="transfer-container col-5 ">
+                        <div class=" transfer-area">
+                            <h2>Remittance </h2>
+                            <div class="transfer-info col-12 mb-3">
+                                <div class="remitter-area col-4">
+                                    <select id="remitter" data-id="hfh" aria-label="remitter">
+                                        <option>Remitter</option>
+
+                                    </select>
+                                </div>
+                                <div class="total-money col-4 mt-2">
+                                    <input type="text" class="sum" placeholder="transfer" id="transferMoney"
+                                        style="width: 150px; margin-bottom:20px" />
+                                    <button type="button" class="sum__send_btn" id="moneySend"
+                                        onclick="tranferMoney()">Send</button>
+                                </div>
+                                <div class="remitter-area col-4">
+                                    <select id="remitte" aria-label="remitte">
+                                        <option>Remitte</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" transfer-area">
+                            <h2>Product Sales </h2>
+                            <div class="transfer-info col-12 mb-3">
+                                <div class="remitter-area col-4">
+                                    <select id="remitter" data-id="hfh" aria-label="remitter">
+                                        <option>Remitter</option>
+                                    </select>
+                                </div>
+                                <div class="total-money col-4 mt-2">
+                                    <p class="sum">Product Name</p>
+                                </div>
+                                <div class="remitter-area col-4">
+                                    <select id="remitte" aria-label="remitte">
+                                        <option>Remitte</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-form-container  col-3">
+                        <h2>Add Product</h2>
+                        <form class="form-container" id="addProductForm">
+                            <div class="form-area">
+                                <div class="mb-3 ">
+                                    <label for="Name" class="form-label">Product Name</label>
+                                    <input class="form-control" id="productName" placeholder="Product Name">
+                                </div>
+                                <div class="mb-3 ">
+                                    <label for="Price" class="form-label">Quantity</label>
+                                    <input class="form-control" id="quantity" placeholder="Quantity">
+                                </div>
+                                <div class="mb-3 ">
+                                    <label for="price" class="form-label">Price</label>
+                                    <input class="form-control" id="price" placeholder="Price">
+                                </div>
+                                <button type="button" class="btn btn-primary" id="useraddBtn"
+                                    onclick="addProduct()">Add</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- User Table -->
+                <ul class="responsive-table col-4 ">
+                    <li class="table-header">
+                        <div class="col col-3 mx-3 ">Full Name</div>
+                        <div class="col col-2 balance">Balance</div>
+                        <div class="col col-2 ">Products</div>
+                        <div class="col col-2">Account Activities</div>
+                    </li>
+                    <div id="users">
+                        <div id="usersList">
+                        </div>
+                    </div>
+                </ul>
+
+                <!-- Product or Account Table -->
+                <ul class="responsive-table col-4 " id="userInfoTble" >
+                    <li class="table-header" id="tableName">
+                    </li>
+                    <div id="usersProduct">
+                       
+                </ul>
+
+                <!-- All Product List -->
+                <ul class="responsive-table col-4">
+                    <li class="table-header">
+                        <div class="row">
+                        <div class=" col-4 ">Product Name</div>
+                        <div class=" col-4 balance ">Price</div>
+                        <div class=" col-4 ">Quantity</div>
+                    </div>
+                    </li>
+                    <div id="products">
+                        <div id="productsList">
+                        </div>
+                </ul>
+            </div>
+        </div>
+
+    </section>
+</body>
+<script src="app.js"></script>
+
+</html>
